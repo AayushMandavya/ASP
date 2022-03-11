@@ -7,15 +7,13 @@ using System.Web.Mvc;
 
 namespace AayushMandavya.Controllers
 {
-    public class MainController : Controller
+    public class Main1Controller : Controller
     {
         mainEntities db = new mainEntities();
-
-        // GET: Main
-        public ActionResult mainview()
+        // GET: Main1
+        public ActionResult mainview1()
         {
-            List<employee> data = db.employees.ToList();
-
+            List<student> data = db.students.ToList();
             return View(data);
         }
     }

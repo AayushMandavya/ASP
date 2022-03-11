@@ -9,7 +9,16 @@
     <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="contact" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nchar" MaxLength="10" />
+  </EntityType>
   <EntityContainer Name="employeeModelStoreContainer">
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

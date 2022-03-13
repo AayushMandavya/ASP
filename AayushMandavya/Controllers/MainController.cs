@@ -18,5 +18,20 @@ namespace AayushMandavya.Controllers
 
             return View(data);
         }
+        public ActionResult create()
+        {
+        
+
+            return View();
+        }
+
+        public ActionResult SaveData(employee employee)
+        {
+         
+            db.employees.Add(employee);
+            db.SaveChanges();
+            return RedirectToAction("mainview");
+        }
     }
+
 }

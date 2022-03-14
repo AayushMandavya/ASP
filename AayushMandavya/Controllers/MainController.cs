@@ -24,7 +24,28 @@ namespace AayushMandavya.Controllers
 
             return View();
         }
+        public ActionResult Edit(int id)
+        {
+            employee employee= db.employees.Find(id);
+            
+            return View(employee);
 
+
+        }
+        public ActionResult UpdateData(employee employee)
+        {
+       
+            db.Entry(employee).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("mainview");  
+        }
+        public ActionResult DeleteData(int id)
+        {
+            employee employee = db.employees.Find(id);
+            db.employees.Remove(employee);
+            db.SaveChanges();
+            return RedirectToAction("mainview");
+        }
         public ActionResult SaveData(employee employee)
         {
          

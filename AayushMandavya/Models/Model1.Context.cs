@@ -25,6 +25,7 @@ namespace AayushMandavya.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<book> books { get; set; }
         public virtual DbSet<employee> employees { get; set; }
         public virtual DbSet<student> students { get; set; }
     }

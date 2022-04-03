@@ -7,24 +7,25 @@ using System.Web.Mvc;
 
 namespace AayushMandavya.Controllers
 {
-    public class Main1Controller : Controller
+    public class main2Controller : Controller
     {
         mainEntities db = new mainEntities();
-        // GET: Main1
-        public ActionResult mainview1()
+        // GET: main2
+        public ActionResult mainview2()
         {
-            List<student> data = db.students.ToList();
+            List<book> data = db.books.ToList();
             return View(data);
         }
-        public ActionResult create1()
+        public ActionResult create2()
         {
             return View();  
         }
-        public ActionResult SaveData(student student)
+        public ActionResult SaveData(book book)
         {
-            db.students.Add(student);   
+
+            db.books.Add(book);
             db.SaveChanges();
-            return RedirectToAction("mainview1");
+            return RedirectToAction("mainview2");
         }
     }
 }

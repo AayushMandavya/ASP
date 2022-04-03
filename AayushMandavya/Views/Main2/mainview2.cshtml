@@ -1,17 +1,24 @@
-﻿@model List<AayushMandavya.Models.student>
+﻿@model List<AayushMandavya.Models.book>
 @{
-    ViewBag.Title = "mainview1";
+    ViewBag.Title = "mainview2";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int sn = 0;
 }
 
-<h2>Student Table</h2>
+<style>
+    table, td, th {
+        background-color: aquamarine;
+    }
+</style>
+<h2>Book Table</h2>
 
 <table class="table" border="1">
     <tr>
         <th>SN</th>
+        <th>ID</th>
         <th>Name</th>
-        <th>Contact</th>
+        <th>Author</th>
+        
     </tr>
     @foreach (var data in Model)
     {
@@ -19,12 +26,13 @@
             <td>@(++sn)</td>
             <td>@(data.id)</td>
             <td>@(data.name)</td>
-            <td>@(data.phone)</td>
+            <td>@(data.author)</td>
             
-
+            
         </tr>
     }
 </table>
 
+<a href="@Url.Action("create2")">Add New Record</a>
 
-<a href="@Url.Action("create1")">Add New Record</a>
+

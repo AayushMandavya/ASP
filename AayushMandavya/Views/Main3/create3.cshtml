@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "create3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("SaveData3", null, FormMethod.Post))
+{
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<form action="SaveData3">
+    <label>ID</label><br />
+    <div>
+        <input type="number" name="id" class="form-control" />
+    </div>
+    <label>Employee ID</label><br />
+    <div>
+        <input type="text" name="empid" class="form-control" />
+    </div>
+    <label>Salary Paid</label><br />
+    <div>
+        <input type="text" name="salary_paid" class="form-control" />
+    </div>
+    <label>Paid Date</label><br />
+    <div>
+        <input type="date" name="paid_date" class="form-control" />
+    </div>
+    <div>
+        <br /><input type="submit" class="btn btn-success" value="Add" />
+
+    </div>
+
+</form>
+}
+

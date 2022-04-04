@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "edit3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit the data</h2>
+@using (Html.BeginForm("UpdateData3", "Main3"))
+{
+
+    <input type="hidden" name="id" value="@Model.id" />
+    <label>ID</label>
+    <br />
+    <div>
+        <input type="number" name="id" class="form-control" />
+    </div>
+    <label>Employee ID</label>
+    <br />
+    <div>
+        <input type="number" name="empid" class="form-control" />
+    </div>
+    <label>Salary Paid</label>
+    <br />
+    <div>
+        <input type="text" name="salarypaid" class="form-control" />
+    </div>
+    <label>Paid Date</label>
+    <br />
+    <div>
+        <input type="datetime" name="paiddate" class="form-control" />
+    </div>
+    <div>
+        <br /><input type="submit" class="btn btn-info" value="Edit" />
+
+    </div>
+
+}
+

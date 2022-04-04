@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Main1Controller.cs" />
     <Compile Include="Controllers\main2Controller.cs" />
+    <Compile Include="Controllers\Main3Controller.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +141,9 @@
     </Compile>
     <Compile Include="Models\DefaultController.cs" />
     <Compile Include="Models\employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\employee_salary_details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -222,6 +226,9 @@
     <Content Include="Views\Main2\mainview2.cshtml" />
     <Content Include="Views\Main2\create2.cshtml" />
     <Content Include="Views\Main1\create1.cshtml" />
+    <Content Include="Views\Main3\mainview3.cshtml" />
+    <Content Include="Views\Main3\create3.cshtml" />
+    <Content Include="Views\Main3\edit3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

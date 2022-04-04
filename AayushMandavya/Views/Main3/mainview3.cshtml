@@ -1,0 +1,40 @@
+﻿@model List<AayushMandavya.Models.employee_salary_details>
+@{
+    ViewBag.Title = "mainview3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int sn = 0;
+}
+
+<style>
+    table, td, th {
+        background-color: aquamarine;
+    }
+</style>
+<h2>Employee Salary Table</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>SN</th>
+        <th>ID</th>
+        <th>Employee ID</th>
+        <th>Salary Paid</th>
+        <th>Paid Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.id)</td>
+            <td>@(data.employee_id)</td>
+            <td>@(data.salary_paid)</td>
+            <td>@(data.paid_date)</td>
+            <td><a href="@Url.Action("edit3", new { id=data.id,})">Edit</a></td>
+            <td><a href="@Url.Action("DeleteData3", new { id=data.id,})">Delete</a></td>
+        </tr>
+    }
+</table>
+
+<a href="@Url.Action("create3")">Add New Record</a>
+

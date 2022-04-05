@@ -18,6 +18,8 @@ namespace AayushMandavya.Controllers
         }
         public ActionResult create3()
         {
+                var employeeList = db.employees.ToList();
+            ViewBag.employeeList = new SelectList(employeeList, "id", "name");
             return View();
         }
         public ActionResult edit3(int id)

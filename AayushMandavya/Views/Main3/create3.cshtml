@@ -16,10 +16,9 @@
     <div>
         <input type="number" name="id" class="form-control" />
     </div>
-    <label>Employee ID</label><br />
-    <div>
-        <input type="text" name="empid" class="form-control" />
-    </div>
+    <label>Employee Name</label>
+    @Html.DropDownList("employeeList",null,"Select",htmlAttributes: new {@Name="employee_id"})
+    
     <label>Salary Paid</label><br />
     <div>
         <input type="text" name="salary_paid" class="form-control" />

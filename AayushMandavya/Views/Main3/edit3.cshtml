@@ -9,16 +9,18 @@
 {
 
     <input type="hidden" name="id" value="@Model.id" />
-        
-    <label>Salary Paid</label>
+    
+    <label>Employee Name</label><br />
+    @Html.DropDownList("employeeList", null, "Select", htmlAttributes: new { @Name = "employee_id" })
+    <br />    <label>Salary Paid</label>
     <br />
     <div>
-        <input type="text" name="salarypaid" class="form-control" />
+        <input type="text" name="salary_paid" class="form-control" />
     </div>
     <label>Paid Date</label>
     <br />
     <div>
-        <input type="date" name="paiddate" class="form-control" />
+        <input type="date" name="paid_date" class="form-control" />
     </div>
     <div>
         <br /><input type="submit" class="btn btn-info" value="Edit" />

@@ -25,12 +25,15 @@ namespace AayushMandavya.Controllers
         public ActionResult edit3(int id)
         {
             employee_salary_details employee_Salary_Details = db.employee_salary_details.Find(id);
+            var employeeList = db.employees.ToList();
+            ViewBag.employeeList = new SelectList(employeeList, "id", "name");
             return View(employee_Salary_Details);
         }
 
         public ActionResult UpdateData3(employee_salary_details employee_Salary_Details)
         {
             db.Entry(employee_Salary_Details).State = System.Data.Entity.EntityState.Modified;
+
             db.SaveChanges();
             return RedirectToAction("mainview3");
 

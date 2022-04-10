@@ -38,6 +38,10 @@
             <td><a href="@Url.Action("DeleteData3", new { id=data.id,})">Delete</a></td>
         </tr>
     }
+    <tr>
+    <td>Total  Salary </td>
+    <td colspan="2">@(Model.Sum(x=>x.salary_paid))</td>
+        </tr>
 </table>
 
 <a href="@Url.Action("create3")">Add New Record</a>

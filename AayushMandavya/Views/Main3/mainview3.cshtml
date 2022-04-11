@@ -11,6 +11,19 @@
         background-color: aquamarine;
     }
 </style>
+@using (Html.BeginForm("mainview3", "Main3", FormMethod.Get))
+{
+    <br />
+    <br />
+    <b>Search Option</b>
+    <br />
+    <br />
+
+    <input type="date" name="searchfrom" />
+   
+    <input type="date" name="searchto" />
+    <input type="submit" name="submit" value="search" />
+}
 <h2>Employee Salary Table</h2>
 
 <table class="table" border="1">
@@ -39,9 +52,9 @@
         </tr>
     }
     <tr>
-    <td>Total  Salary </td>
-    <td colspan="2">@(Model.Sum(x=>x.salary_paid))</td>
-        </tr>
+        <td>Total  Salary </td>
+        <td colspan="2">@(Model.Sum(x=>x.salary_paid))</td>
+    </tr>
 </table>
 
 <a href="@Url.Action("create3")">Add New Record</a>

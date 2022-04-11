@@ -11,11 +11,14 @@ namespace AayushMandavya.Controllers
     {
         mainEntities db = new mainEntities();
         // GET: Main3
-        public ActionResult mainview3()
+        public ActionResult mainview3(DateTime? searchfrom, DateTime? searchto)
         {
-            List<employee_salary_details> data =db.employee_salary_details.ToList();
-            return View(data);  
-        }
+            
+             
+                 List<employee_salary_details> data =db.employee_salary_details.Where(x => x.paid_date >= searchfrom  && x.paid_date <= searchto|| searchfrom == null).ToList();
+                return View(data);  
+            
+            }
         public ActionResult create3()
         {
                 var employeeList = db.employees.ToList();

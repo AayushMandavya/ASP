@@ -10,6 +10,12 @@
         background-color: aquamarine;
     }
 </style>
+
+@using(Html.BeginForm("mainview",null,FormMethod.Get))
+            {
+              <br /><br />  <b>Search Option</b><br /><br />@Html.RadioButton("option","name") <text>Name</text>
+    @Html.RadioButton("option","id") <text>ID</text><br /><br /> @Html.TextBox("search") <input type="submit" name="submit" value="search" />
+            }
 <h2>Employee Table</h2>
 
 <table class="table" border="1">

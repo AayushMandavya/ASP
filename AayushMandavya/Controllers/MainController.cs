@@ -12,11 +12,23 @@ namespace AayushMandavya.Controllers
         mainEntities db = new mainEntities();
 
         // GET: Main
-        public ActionResult mainview()
-        {
-            List<employee> data = db.employees.ToList();
+        
+        public ActionResult mainview(string option, string search)
 
-            return View(data);
+            {
+            if(option=="name")
+            {
+                return View(db.employees.Where(x=>x.name.StartsWith(search) || search==null).ToList());
+
+            }
+            else
+            {
+                return View(db.employees.Where(x=>x.name == search || search == null).ToList());
+            }
+
+            //List<employee> data = db.employees.ToList();
+
+            //return View(data);
         }
         public ActionResult create()
         {
